@@ -312,10 +312,8 @@ function drawNext() {
   if (!nextType) return;
   const matrix = SHAPES[nextType];
   const size = 24;
-  const width = matrix[0].length * size;
-  const height = matrix.length * size;
-  const offsetX = Math.floor((nextCanvas.width - width) / (2 * size));
-  const offsetY = Math.floor((nextCanvas.height - height) / (2 * size));
+  const offsetX = (nextCanvas.width / size - matrix[0].length) / 2;
+  const offsetY = (nextCanvas.height / size - matrix.length) / 2;
   drawMatrix(nextCtx, matrix, offsetX, offsetY, size);
 }
 
