@@ -8,13 +8,18 @@
   </head>
   <body>
     <main class="layout">
-      <section class="panel game-panel">
+      <section class="panel game-panel" aria-label="테트리스 플레이 영역">
         <h1>TETRIS</h1>
         <canvas id="board" width="300" height="600" aria-label="테트리스 게임 보드"></canvas>
         <p id="status" class="status" aria-live="polite">게임 시작: 방향키 + 스페이스</p>
       </section>
 
-      <aside class="panel info-panel">
+      <aside class="panel info-panel" aria-label="게임 정보">
+        <div class="seed-wrap">
+          <span>SEED</span>
+          <strong id="seed-value">-</strong>
+        </div>
+
         <div class="stat">
           <span>점수</span>
           <strong id="score">0</strong>
@@ -27,24 +32,36 @@
           <span>라인</span>
           <strong id="lines">0</strong>
         </div>
-        <div class="next-wrap">
-          <p>NEXT</p>
-          <canvas id="next" width="120" height="120" aria-label="다음 블록"></canvas>
+
+        <div class="preview-grid">
+          <div class="next-wrap">
+            <p>HOLD</p>
+            <canvas id="hold" width="120" height="120" aria-label="보관 블록"></canvas>
+          </div>
+          <div class="next-wrap">
+            <p>NEXT</p>
+            <canvas id="next" width="120" height="120" aria-label="다음 블록"></canvas>
+          </div>
         </div>
+
         <div class="controls">
           <p>조작</p>
           <ul>
             <li>← →: 이동</li>
-            <li>↑: 회전</li>
+            <li>↑ / X: 시계 회전 (CW)</li>
+            <li>Z: 반시계 회전 (CCW)</li>
             <li>↓: 소프트 드롭</li>
             <li>Space: 하드 드롭</li>
+            <li>C: 홀드</li>
             <li>P: 일시정지</li>
-            <li>R: 재시작</li>
+            <li>R: 같은 시드 재시작</li>
+            <li>N: 새 시드 시작</li>
           </ul>
         </div>
       </aside>
     </main>
 
+    <script src="tetris-core.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
