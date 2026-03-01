@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris MVP</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel game-panel">
+        <h1>TETRIS</h1>
+        <canvas id="board" width="300" height="600" aria-label="테트리스 게임 보드"></canvas>
+        <p id="status" class="status" aria-live="polite">게임 시작: 방향키 + 스페이스</p>
+      </section>
+
+      <aside class="panel info-panel">
+        <div class="stat">
+          <span>점수</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="stat">
+          <span>레벨</span>
+          <strong id="level">1</strong>
+        </div>
+        <div class="stat">
+          <span>라인</span>
+          <strong id="lines">0</strong>
+        </div>
+        <div class="next-wrap">
+          <p>NEXT</p>
+          <canvas id="next" width="120" height="120" aria-label="다음 블록"></canvas>
+        </div>
+        <div class="controls">
+          <p>조작</p>
+          <ul>
+            <li>← →: 이동</li>
+            <li>↑: 회전</li>
+            <li>↓: 소프트 드롭</li>
+            <li>Space: 하드 드롭</li>
+            <li>P: 일시정지</li>
+            <li>R: 재시작</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
